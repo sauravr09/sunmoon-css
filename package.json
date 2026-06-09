@@ -1,0 +1,14 @@
+{
+  "name": "sunmoon-css",
+  "version": "1.0.0",
+  "description": "Personal CSS design system with Sun (light) and Moon (dark) themes",
+  "main": "sunmoon.js",
+  "style": "sunmoon.css",
+  "files": [
+    "sunmoon.css",
+    "sunmoon.js",
+    "src/"
+  ],
+  "keywords": ["css", "design-system", "themes"],
+  "author": "Saurav Raut"
+}

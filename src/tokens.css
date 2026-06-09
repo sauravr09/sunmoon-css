@@ -1,0 +1,182 @@
+
+/* 
+    SUN — Light Mode (default)
+    Warm, golden, energetic
+
+ */
+
+:root {
+
+  /* --- Color: Primary (amber) --- */
+  --sun-primary:          #f59e0b;
+  --sun-primary-hover:    #d97706;  /* slightly darker for hover states */
+  --sun-primary-fg:       #1a1a1a;  /* text/icons on top of primary */
+
+  /* --- Color: Backgrounds --- */
+  --sun-bg:               #fdf8f0;  /* page background */
+  --sun-surface:          #eeede6;  /* cards, panels, inputs */
+  --sun-surface-raised:   #edede8;  /* elevated surface (dropdowns, tooltips) */
+
+  /* --- Color: Text --- */
+  --sun-text:             #1a1a1a;  /* primary text */
+  --sun-text-muted:       #6b6b65;  /* secondary / supporting text */
+  --sun-text-subtle:      #9b9b94;  /* hints, placeholders, disabled */
+
+  /* --- Color: Borders --- */
+  --sun-border:           #e2e2da;  /* default border */
+  --sun-border-strong:    #c8c8c0;  /* focused or emphasized border */
+
+  /* --- Color: Semantic --- */
+  --sun-success:          #16a34a;
+  --sun-warning:          #d97706;
+  --sun-danger:           #dc2626;
+  --sun-info:             #2563eb;
+
+  /* --- Color: Secondary --- */
+  --sun-secondary-bg:     #f5f5f0;
+  --sun-secondary-fg:     #555550;
+
+  /* --- Shadows --- */
+  --sun-shadow-sm:        0 1px 3px rgba(0, 0, 0, 0.08);
+  --sun-shadow-md:        0 4px 12px rgba(0, 0, 0, 0.10);
+  --sun-shadow-lg:        0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* --- Typography --- */
+  --font-sans:            'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:            'Fira Code', 'Cascadia Code', monospace;
+  --font-serif:           'Georgia', serif;
+
+  /* --- Type scale --- */
+  --text-xs:    0.75rem;   /* 12px */
+  --text-sm:    0.875rem;  /* 14px */
+  --text-base:  1rem;      /* 16px */
+  --text-lg:    1.125rem;  /* 18px */
+  --text-xl:    1.25rem;   /* 20px */
+  --text-2xl:   1.5rem;    /* 24px */
+  --text-3xl:   1.875rem;  /* 30px */
+  --text-4xl:   2.25rem;   /* 36px */
+
+  /* --- Spacing --- */
+  --space-1:    0.25rem;   /* 4px  */
+  --space-2:    0.5rem;    /* 8px  */
+  --space-3:    0.75rem;   /* 12px */
+  --space-4:    1rem;      /* 16px */
+  --space-5:    1.25rem;   /* 20px */
+  --space-6:    1.5rem;    /* 24px */
+  --space-8:    2rem;      /* 32px */
+  --space-10:   2.5rem;    /* 40px */
+  --space-12:   3rem;      /* 48px */
+  --space-16:   4rem;      /* 64px */
+
+  /* --- Border radius --- */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-full: 9999px;
+
+  /* --- Transitions --- */
+  --ease-fast:    150ms ease;
+  --ease-base:    200ms ease;
+  --ease-slow:    300ms ease;
+
+  /* --- Focus --- */
+  --sun-focus-ring: rgba(245, 158, 11, 0.2);
+
+
+  /* --- Semantic aliases (what components actually use) --- */
+  --color-bg:           var(--sun-bg);
+  --color-surface:      var(--sun-surface);
+  --color-surface-raised: var(--sun-surface-raised);
+  --color-text:         var(--sun-text);
+  --color-text-muted:   var(--sun-text-muted);
+  --color-text-subtle:  var(--sun-text-subtle);
+  --color-primary:      var(--sun-primary);
+  --color-primary-hover: var(--sun-primary-hover);
+  --color-primary-fg:   var(--sun-primary-fg);
+  --color-border:       var(--sun-border);
+  --color-border-strong: var(--sun-border-strong);
+  --color-success:      var(--sun-success);
+  --color-warning:      var(--sun-warning);
+  --color-danger:       var(--sun-danger);
+  --color-info:         var(--sun-info);
+  --shadow-sm:          var(--sun-shadow-sm);
+  --shadow-md:          var(--sun-shadow-md);
+  --shadow-lg:          var(--sun-shadow-lg);
+  --color-focus-ring:   var(--sun-focus-ring);
+  --color-secondary-bg: var(--sun-secondary-bg);
+  --color-secondary-fg: var(--sun-secondary-fg);
+}
+
+
+/*
+   MOON — Dark Mode
+   Cool, silver-blue, calm
+   Activated by: <html data-theme="dark">
+   
+*/
+
+[data-theme="dark"] {
+
+  /* --- Color: Primary (silver-blue moonlight) --- */
+  --moon-primary:         #94a3b8;
+  --moon-primary-hover:   #adbace;  /* lighter on hover (inverted logic in dark) */
+  --moon-primary-fg:      #0a0e1a;  /* dark text on the silver primary */
+
+  /* --- Color: Backgrounds --- */
+  --moon-bg:              #0a0e1a;  /* deep midnight page background */
+  --moon-surface:         #1a2235;  /* cards, panels, inputs */
+  --moon-surface-raised:  #1e2a40;  /* dropdowns, tooltips */
+
+  /* --- Color: Text --- */
+  --moon-text:            #e2e8f0;  /* primary text (cool off-white) */
+  --moon-text-muted:      #8a96a8;  /* secondary text */
+  --moon-text-subtle:     #556070;  /* hints, placeholders, disabled */
+
+  /* --- Color: Secondary --- */
+  --moon-secondary-bg: #1a2235;
+  --moon-secondary-fg: #e2e8f0;
+
+  /* --- Color: Borders --- */
+  --moon-border:          #2a3a52;  /* default border */
+  --moon-border-strong:   #3d5470;  /* focused or emphasized border */
+
+  /* --- Color: Semantic (adjusted for dark bg) --- */
+  --moon-success:         #4ade80;
+  --moon-warning:         #fbbf24;
+  --moon-danger:          #f87171;
+  --moon-info:            #60a5fa;
+
+  /* --- Shadows (stronger alpha needed on dark) --- */
+  --moon-shadow-sm:       0 1px 3px rgba(0, 0, 0, 0.4);
+  --moon-shadow-md:       0 4px 12px rgba(0, 0, 0, 0.5);
+  --moon-shadow-lg:       0 8px 24px rgba(0, 0, 0, 0.6);
+
+
+  /* --- Focus --- */
+  --moon-focus-ring: rgba(148, 163, 184, 0.15);
+
+  /* --- Override semantic aliases --- */
+  /* Typography, spacing, radius, and transitions stay the same — only colors change */
+  --color-bg:             var(--moon-bg);
+  --color-surface:        var(--moon-surface);
+  --color-surface-raised: var(--moon-surface-raised);
+  --color-text:           var(--moon-text);
+  --color-text-muted:     var(--moon-text-muted);
+  --color-text-subtle:    var(--moon-text-subtle);
+  --color-primary:        var(--moon-primary);
+  --color-primary-hover:  var(--moon-primary-hover);
+  --color-primary-fg:     var(--moon-primary-fg);
+  --color-border:         var(--moon-border);
+  --color-border-strong:  var(--moon-border-strong);
+  --color-success:        var(--moon-success);
+  --color-warning:        var(--moon-warning);
+  --color-danger:         var(--moon-danger);
+  --color-info:           var(--moon-info);
+  --shadow-sm:            var(--moon-shadow-sm);
+  --shadow-md:            var(--moon-shadow-md);
+  --shadow-lg:            var(--moon-shadow-lg);
+  --color-focus-ring: var(--moon-focus-ring);
+  --color-secondary-bg:   var(--moon-secondary-bg);
+  --color-secondary-fg:   var(--moon-secondary-fg);
+}

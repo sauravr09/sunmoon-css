@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunmoonCSS — Component Test</title>
+  <link rel="stylesheet" href="sunmoon.css">
+  <style>
+    .test-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--space-10) var(--space-6);
+    }
+
+    .test-section {
+      margin-bottom: var(--space-12);
+    }
+
+    .test-section h2 {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .test-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: var(--space-4);
+      right: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      box-shadow: var(--shadow-sm);
+      transition: background var(--ease-base), border-color var(--ease-base);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--color-border-strong);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="toggle">☀️ Sun / 🌙 Moon</button>
+
+  <div class="test-page">
+
+    <div style="margin-bottom: var(--space-12);">
+      <h1 style="font-size: var(--text-4xl); font-weight: 700; margin-bottom: var(--space-2);">SunmoonCSS</h1>
+      <p class="text-muted">Component library test page. Toggle between sun and moon themes using the button above.</p>
+    </div>
+
+    <!-- Typography -->
+    <div class="test-section">
+      <h2>Typography</h2>
+      <h1>Heading One</h1>
+      <h2 style="font-size: var(--text-3xl);">Heading Two</h2>
+      <h3 style="font-size: var(--text-2xl);">Heading Three</h3>
+      <h4 style="font-size: var(--text-xl);">Heading Four</h4>
+      <p>Body text. The quick brown fox jumps over the lazy dog. Used to check readability and line-height at <code>var(--text-base)</code>.</p>
+      <p class="text-muted">Muted text. Supporting copy, captions, secondary labels.</p>
+      <p class="text-subtle">Subtle text. Placeholders, hints, disabled states.</p>
+      <p>Inline code example: run <code>npm install sunmoon-css</code> to get started.</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="test-section">
+      <h2>Buttons</h2>
+      <div class="test-row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-ghost">Ghost</button>
+      </div>
+      <div class="test-row">
+        <button class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled</button>
+        <button class="btn btn-ghost" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled Ghost</button>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="test-section">
+      <h2>Badges</h2>
+      <div class="test-row">
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-danger">Danger</span>
+        <span class="badge badge-info">Info</span>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="test-section">
+      <h2>Cards</h2>
+      <div class="card" style="margin-bottom: var(--space-4);">
+        <h3 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">Basic Card</h3>
+        <p style="margin: 0;" class="text-muted">A surface for grouping related content. Uses <code>--color-surface</code> and <code>--shadow-sm</code>.</p>
+      </div>
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+          <h3 style="font-size: var(--text-lg); font-weight: 600; margin: 0;">Card with Actions</h3>
+          <span class="badge badge-success">Active</span>
+        </div>
+        <p class="text-muted" style="margin-bottom: var(--space-6);">Cards can contain any combination of components — badges, buttons, inputs, and typography all together.</p>
+        <div class="test-row">
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-ghost">Discard</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="test-section">
+      <h2>Inputs</h2>
+      <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+        <input class="input" type="text" placeholder="Default input — click to see focus ring">
+        <input class="input" type="email" placeholder="Email address">
+        <input class="input" type="text" value="Filled input" >
+        <textarea class="textarea" rows="4" placeholder="Write something..."></textarea>
+        <select class="select">
+            <option value="" disabled selected>Choose an option</option>
+            <option value="sun">Sun</option>
+            <option value="moon">Moon</option>
+        </select>
+        <input class="input" type="search" placeholder="Search...">
+        <input class="input" type="password" placeholder="Password">
+        <input class="input" type="number" placeholder="0" min="0" max="100">
+        <input class="input" type="text" placeholder="Disabled" disabled>
+      </div>
+    </div>
+
+    <!-- Semantic Colors -->
+    <div class="test-section">
+      <h2>Semantic Colors</h2>
+      <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+        <div style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-success); color: #fff;">
+          Success — <code style="background: rgba(255,255,255,0.2); color: #fff;">--color-success</code>
+        </div>
+        <div style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-warning); color: #fff;">
+          Warning — <code style="background: rgba(255,255,255,0.2); color: #fff;">--color-warning</code>
+        </div>
+        <div style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-danger); color: #fff;">
+          Danger — <code style="background: rgba(255,255,255,0.2); color: #fff;">--color-danger</code>
+        </div>
+        <div style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-info); color: #fff;">
+          Info — <code style="background: rgba(255,255,255,0.2); color: #fff;">--color-info</code>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="sunmoon.js"></script>
+</body>
+</html>
