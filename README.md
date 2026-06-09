@@ -1,6 +1,6 @@
 # SunmoonCSS
 
-A lightweight personal CSS design system with sun (light) and moon (dark) themes.
+A personal CSS design system with sun (light) and moon (dark) themes. Check out the test page for visual references: https://sauravr09.github.io/sunmoon-css/
 
 ---
 
@@ -14,7 +14,7 @@ npm install github:sauravr09/sunmoon-css
 
 ---
 
-## Setup
+## Setup - Plain HTML
 
 Add to your HTML `<head>`:
 
@@ -35,6 +35,108 @@ Add a toggle button somewhere in your HTML:
 ```
 
 ---
+
+## Setup — React (Vite)
+
+Install directly from GitHub:
+
+```bash
+npm install github:yourusername/sunmoon-css
+```
+
+Import the CSS in your `main.jsx`:
+
+```javascript
+import 'sunmoon-css/sunmoon.css'
+```
+
+Import the JS in your `main.jsx` as well:
+
+```javascript
+import 'sunmoon-css/sunmoon.js'
+```
+
+Add a toggle button anywhere in your JSX:
+
+```jsx
+<button id="toggle">Toggle Theme</button>
+```
+
+---
+
+### Recommended: wrap the toggle in a React component
+
+Rather than relying on the `id="toggle"` in sunmoon.js, in React it's cleaner to handle the toggle yourself:
+
+```jsx
+// ThemeToggle.jsx
+export default function ThemeToggle() {
+  const toggle = () => {
+    const html = document.documentElement
+    const isDark = html.dataset.theme === 'dark'
+    html.dataset.theme = isDark ? '' : 'dark'
+    localStorage.setItem('sunmoon-theme', isDark ? 'light' : 'dark')
+  }
+
+  return (
+    <button className="btn btn-ghost" onClick={toggle}>
+      Toggle Theme
+    </button>
+  )
+}
+```
+
+Then use it anywhere:
+
+```jsx
+import ThemeToggle from './ThemeToggle'
+
+export default function App() {
+  return (
+    <div>
+      <ThemeToggle />
+    </div>
+  )
+}
+```
+
+---
+
+### Applying the saved theme on load
+
+In React, add this to your `main.jsx` before the `ReactDOM.createRoot` call so the theme is applied before the page renders — this prevents a flash of the wrong theme:
+
+```javascript
+const saved = localStorage.getItem('sunmoon-theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+if (saved === 'dark' || (!saved && prefersDark)) {
+  document.documentElement.dataset.theme = 'dark'
+}
+```
+
+Your full `main.jsx` should look like this:
+
+```javascript
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import 'sunmoon-css/sunmoon.css'
+import App from './App.jsx'
+
+// apply theme before render to prevent flash
+const saved = localStorage.getItem('sunmoon-theme')
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+if (saved === 'dark' || (!saved && prefersDark)) {
+  document.documentElement.dataset.theme = 'dark'
+}
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+)
+```
 
 ## Theming
 
