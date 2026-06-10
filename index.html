@@ -5,51 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SunmoonCSS — Component Test</title>
   <link rel="stylesheet" href="sunmoon.css">
-  <style>
-    .test-page {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: var(--space-10) var(--space-6);
-    }
-
-    .test-section {
-      margin-bottom: var(--space-12);
-    }
-
-    .test-section h2 {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-6);
-      padding-bottom: var(--space-3);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .test-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-3);
-      margin-bottom: var(--space-4);
-    }
-
-  </style>
 </head>
 <body>
-
-  <div class="test-page">
+  <div class="page">
 
     <div style="margin-bottom: var(--space-12);">
       <button class="theme-toggle sun-toggle" >☀️ Sun / 🌙 Moon</button>
-      <h1 style="font-size: var(--text-4xl); font-weight: 700; margin-bottom: var(--space-2);">SunmoonCSS</h1>
+      <h1>SunmoonCSS</h1>
       <p class="text-muted">Component library test page. Toggle between sun and moon themes using the button above.</p>
       <p><a href="https://github.com/sauravr09/sunmoon-css" target="_blank"><button class=" btn btn-primary">View Repository</button></a></p>
     </div>
 
     <!-- Typography -->
-    <div class="test-section">
+    <div class="page-section">
       <h2>Typography</h2>
       <h1>Heading One</h1>
       <h2 style="font-size: var(--text-3xl);">Heading Two</h2>
@@ -62,22 +30,22 @@
     </div>
 
     <!-- Buttons -->
-    <div class="test-section">
+    <div class="page-section">
       <h2>Buttons</h2>
-      <div class="test-row">
+      <div class="page-row">
         <button class="btn btn-primary">Primary</button>
         <button class="btn btn-ghost">Ghost</button>
       </div>
-      <div class="test-row">
+      <div class="page-row">
         <button class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled</button>
         <button class="btn btn-ghost" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled Ghost</button>
       </div>
     </div>
 
     <!-- Badges -->
-    <div class="test-section">
+    <div class="page-section">
       <h2>Badges</h2>
-      <div class="test-row">
+      <div class="page-row">
         <span class="badge badge-success">Success</span>
         <span class="badge badge-warning">Warning</span>
         <span class="badge badge-danger">Danger</span>
@@ -86,7 +54,7 @@
     </div>
 
     <!-- Cards -->
-    <div class="test-section">
+    <div class="page-section">
       <h2>Cards</h2>
       <div class="card" style="margin-bottom: var(--space-4);">
         <h3 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-2);">Basic Card</h3>
@@ -98,7 +66,7 @@
           <span class="badge badge-success">Active</span>
         </div>
         <p class="text-muted" style="margin-bottom: var(--space-6);">Cards can contain any combination of components — badges, buttons, inputs, and typography all together.</p>
-        <div class="test-row">
+        <div class="page-row">
           <button class="btn btn-primary">Save</button>
           <button class="btn btn-ghost">Discard</button>
         </div>
@@ -106,7 +74,7 @@
     </div>
 
     <!-- Inputs -->
-    <div class="test-section">
+    <div class="page-section">
       <h2>Inputs</h2>
       <div style="display: flex; flex-direction: column; gap: var(--space-4);">
         <input class="input" type="text" placeholder="Default input — click to see focus ring">
@@ -126,25 +94,25 @@
     </div>
 
     <!-- Nav bar example -->
-    <div class="test-section">
+    <div class="page-section">
       <h2>Nav Bar example</h2>
           <!-- List Styles [Nav bar example] -->
       <nav class="navbar">
-        <div class="navbar__logo">SunmoonCSS</div>
+        <div class="navbar-logo">SunmoonCSS</div>
 
-        <ul class="navbar__links">
-          <li><a href="#home" class="navbar__link">Home</a></li>
-          <li><a href="#docs" class="navbar__link">Docs</a></li>
-          <li><a href="#components" class="navbar__link">Components</a></li>
+        <ul class="navbar-links">
+          <li><a href="#home" class="navbar-link">Home</a></li>
+          <li><a href="#docs" class="navbar-link">Docs</a></li>
+          <li><a href="#components" class="navbar-link">Components</a></li>
            <!-- mobile only toggle -->
-          <li class="navbar__toggle-item navbar__toggle-item--mobile">
-            <button class="navbar__toggle sun-toggle nav-toggle">🌙</button>
+          <li class="navbar-toggle-item navbar-toggle-item--mobile">
+            <button class="navbar-toggle sun-toggle nav-toggle">🌙</button>
           </li>
         </ul>
 
-        <div class="navbar__actions">
-          <button class="navbar__toggle sun-toggle navbar__toggle--desktop nav-toggle">🌙</button>
-          <button class="navbar__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <div class="navbar-actions">
+          <button class="navbar-toggle sun-toggle navbar-toggle--desktop nav-toggle">🌙</button>
+          <button class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
             ▾
           </button>
         </div>
@@ -152,7 +120,7 @@
     </div>
 
     <!-- Semantic Colors -->
-    <div class="test-section">
+    <div class="page-section">
       <h2 id="colors">Semantic Colors</h2>
       <div style="display: flex; flex-direction: column; gap: var(--space-3);">
         <div style="padding: var(--space-4); border-radius: var(--radius-md); background: var(--color-success); color: #fff;">

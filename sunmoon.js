@@ -44,7 +44,7 @@ updateThemeIcons();
 
 // hamburger menu
 const hamburger = document.querySelector('#hamburger')
-const navLinks  = document.querySelector('.navbar__links')
+const navLinks  = document.querySelector('.navbar-links')
 
 hamburger.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('is-open')
@@ -53,7 +53,7 @@ hamburger.addEventListener('click', () => {
 })
 
 // close menu when a link is clicked
-document.querySelectorAll('.navbar__link').forEach(link => {
+document.querySelectorAll('.navbar-link').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('is-open')
     hamburger.setAttribute('aria-expanded', false)

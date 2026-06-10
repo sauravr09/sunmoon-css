@@ -8,6 +8,47 @@ body {
   line-height: 1.6;
 }
 
+.page { 
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6);
+}
+
+
+.page-section {
+  margin-bottom: var(--space-12);
+}
+
+.page-section h2 {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.page-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+
+
+
 /* --- Typography --- */
 h1 { font-size: var(--text-4xl); }
 h2 { font-size: var(--text-3xl); }
@@ -207,14 +248,14 @@ input[type="number"]::-webkit-outer-spin-button {
   z-index: 100;
 }
 
-.navbar__logo {
+.navbar-logo {
   font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-primary);
   flex: 1;
 }
 
-.navbar__links {
+.navbar-links {
   display: flex;
   align-items: center;
   gap: var(--space-6);
@@ -222,7 +263,7 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: center;
 }
 
-.navbar__link {
+.navbar-link {
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-text-muted);
@@ -230,16 +271,16 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: color var(--ease-fast);
 }
 
-.navbar__link:hover {
+.navbar-link:hover {
   color: var(--color-text);
 }
 
-.navbar__link.is-active {
+.navbar-link.is-active {
   color: var(--color-primary);
   font-weight: 600;
 }
 
-.navbar__actions {
+.navbar-actions {
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -248,12 +289,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* toggle sits inline on desktop */
-.navbar__toggle-item {
+.navbar-toggle-item {
   display: flex;
   align-items: center;
 }
 
-.navbar__toggle {
+.navbar-toggle {
   background: var(--color-surface-raised);
   border: 1px solid var(--color-border);
   color: var(--color-text);
@@ -266,12 +307,12 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: background var(--ease-fast), border-color var(--ease-fast);
 }
 
-.navbar__toggle:hover {
+.navbar-toggle:hover {
   border-color: var(--color-border-strong);
 }
 
 /* hamburger — hidden on desktop */
-.navbar__hamburger {
+.navbar-hamburger {
   display: none;
   background: var(--color-surface-raised);
   border: 1px solid var(--color-border);
@@ -284,12 +325,12 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: border-color var(--ease-fast);
 }
 
-.navbar__hamburger:hover {
+.navbar-hamburger:hover {
   border-color: var(--color-border-strong);
 }
 
 /* hide mobile toggle by default */
-.navbar__toggle-item--mobile {
+.navbar-toggle-item--mobile {
   display: none;
 }
 
@@ -302,7 +343,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   /* hide desktop links */
-  .navbar__links {
+  .navbar-links {
     display: none;
     flex-direction: column;
     align-items: flex-start;
@@ -318,11 +359,11 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   /* open state */
-  .navbar__links.is-open {
+  .navbar-links.is-open {
     display: flex;
   }
 
-  .navbar__link {
+  .navbar-link {
     padding: var(--space-1) 0;
     width: 100%;
     /* border-bottom: 1px solid var(--color-border); */
@@ -330,12 +371,12 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   /* hide desktop toggle */
-  .navbar__toggle--desktop {
+  .navbar-toggle--desktop {
     display: none;
   }
   
   /* show mobile toggle inside dropdown */
-  .navbar__toggle-item--mobile {
+  .navbar-toggle-item--mobile {
     display: flex;
     padding: var(--space-3) 0;
     width: 100%;
@@ -344,12 +385,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
   /* show hamburger */
-  .navbar__hamburger {
+  .navbar-hamburger {
     display: block;
   }
 
   /* hide actions wrapper on mobile since hamburger handles it */
-  .navbar__actions {
+  .navbar-actions {
     gap: 0;
   }
 }
