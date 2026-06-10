@@ -74,3 +74,40 @@ document.addEventListener('click', e => {
     hamburger.textContent = '▾'
   }
 })
+
+// Modal open / close
+function openModal(id) {
+  document.getElementById(id).classList.add("active");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove("active");
+}
+
+// Dropdown menu 
+
+document.addEventListener("click", function (e) {
+  const toggleBtn = e.target.closest(".dropdown-toggle");
+  const dropdown = e.target.closest(".dropdown");
+
+  // If clicking button → toggle its menu
+  if (toggleBtn) {
+    const parent = toggleBtn.closest(".dropdown");
+    const menu = parent.querySelector(".dropdown-menu");
+
+    // close other dropdowns first
+    document.querySelectorAll(".dropdown-menu").forEach((m) => {
+      if (m !== menu) m.classList.remove("active");
+    });
+
+    menu.classList.toggle("active");
+    return;
+  }
+
+  // If clicking outside → close all
+  if (!dropdown) {
+    document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+      menu.classList.remove("active");
+    });
+  }
+});

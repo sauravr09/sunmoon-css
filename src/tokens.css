@@ -15,7 +15,8 @@
   /* --- Color: Backgrounds --- */
   --sun-bg:               #fdf8f0;  /* page background */
   --sun-surface:          #eeede6;  /* cards, panels, inputs */
-  --sun-surface-raised:   #edede8;  /* elevated surface (dropdowns, tooltips) */
+  /* --sun-surface-raised:   #edede8;  */
+  --sun-surface-raised:   #e3e2da;
 
   /* --- Color: Text --- */
   --sun-text:             #1a1a1a;  /* primary text */

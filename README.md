@@ -201,6 +201,37 @@ SunmoonCSS will automatically respect the user's OS preference on first visit, a
 
 ---
 
+### Simple Nav Bar + Mobile responsiveness
+
+```html
+<nav class="navbar">
+  <div class="navbar-logo">SunmoonCSS</div>
+
+  <ul class="navbar-links">
+    <li><a href="#home" class="navbar-link">Home</a></li>
+    <li><a href="#docs" class="navbar-link">Docs</a></li>
+    <li><a href="#components" class="navbar-link">Components</a></li>
+      <!-- mobile only toggle -->
+    <li class="navbar-toggle-item navbar-toggle-item--mobile">
+      <button class="navbar-toggle sun-toggle nav-toggle">🌙</button>
+    </li>
+  </ul>
+
+  <div class="navbar-actions">
+    <button class="navbar-toggle sun-toggle navbar-toggle--desktop nav-toggle">🌙</button>
+    <button class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      ▾
+    </button>
+  </div>
+</nav>
+```
+
+### Tables | Container | Spinner | Avatar | Tooltip | Dropdown Menu | etc
+
+All design implementations can be found in index.html of the repo. Check it out!
+
+---
+
 ## Tokens
 
 All design values are available as CSS custom properties. Key tokens:
@@ -222,6 +253,8 @@ All design values are available as CSS custom properties. Key tokens:
 Full token reference in `src/tokens.css`.
 
 ---
+
+
 
 ## Updating
 
