@@ -1,7 +1,4 @@
 /* --- Base --- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
 body {
   background: var(--color-bg);
@@ -171,3 +168,188 @@ input[type="number"]::-webkit-outer-spin-button {
 .badge-warning { background: var(--color-warning); color: #fff; }
 .badge-danger  { background: var(--color-danger);  color: #fff; }
 .badge-info    { background: var(--color-info);    color: #fff; }
+
+
+/* Theme Button */
+.theme-toggle {
+  /* position: fixed; */
+  top: var(--space-4);
+  right: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  box-shadow: var(--shadow-sm);
+  transition: background var(--ease-base), border-color var(--ease-base);
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-border-strong);
+}
+
+/* Nav Bar Style */
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__logo {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  flex: 1;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar__link {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--ease-fast);
+}
+
+.navbar__link:hover {
+  color: var(--color-text);
+}
+
+.navbar__link.is-active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.navbar__actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* toggle sits inline on desktop */
+.navbar__toggle-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__toggle {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background var(--ease-fast), border-color var(--ease-fast);
+}
+
+.navbar__toggle:hover {
+  border-color: var(--color-border-strong);
+}
+
+/* hamburger — hidden on desktop */
+.navbar__hamburger {
+  display: none;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-lg);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: border-color var(--ease-fast);
+}
+
+.navbar__hamburger:hover {
+  border-color: var(--color-border-strong);
+}
+
+/* hide mobile toggle by default */
+.navbar__toggle-item--mobile {
+  display: none;
+}
+
+/* --- Navbar Mobile --- */
+@media (max-width: 768px) {
+
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
+
+  /* hide desktop links */
+  .navbar__links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) var(--space-6);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* open state */
+  .navbar__links.is-open {
+    display: flex;
+  }
+
+  .navbar__link {
+    padding: var(--space-1) 0;
+    width: 100%;
+    /* border-bottom: 1px solid var(--color-border); */
+    font-size: var(--text-base);
+  }
+
+  /* hide desktop toggle */
+  .navbar__toggle--desktop {
+    display: none;
+  }
+  
+  /* show mobile toggle inside dropdown */
+  .navbar__toggle-item--mobile {
+    display: flex;
+    padding: var(--space-3) 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+
+  /* show hamburger */
+  .navbar__hamburger {
+    display: block;
+  }
+
+  /* hide actions wrapper on mobile since hamburger handles it */
+  .navbar__actions {
+    gap: 0;
+  }
+}

@@ -79,6 +79,7 @@
   --ease-fast:    150ms ease;
   --ease-base:    200ms ease;
   --ease-slow:    300ms ease;
+  --ease-x-slow:  500ms ease;
 
   /* --- Focus --- */
   --sun-focus-ring: rgba(245, 158, 11, 0.2);
