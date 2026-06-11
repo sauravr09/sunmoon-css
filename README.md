@@ -201,6 +201,15 @@ SunmoonCSS will automatically respect the user's OS preference on first visit, a
 
 ---
 
+### Theme toggle button 
+
+You can choose between a fixed toggle button on the top right or a normal button. 
+
+```html
+      <button class="theme-toggle sun-toggle" >☀️ Sun / 🌙 Moon</button>
+      <button class="theme-toggle-fixed sun-toggle" >☀️ Sun / 🌙 Moon</button>
+```
+
 ### Simple Nav Bar + Mobile responsiveness
 
 ```html
