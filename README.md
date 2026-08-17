@@ -41,7 +41,7 @@ Add a toggle button somewhere in your HTML:
 Install directly from GitHub:
 
 ```bash
-npm install github:yourusername/sunmoon-css
+npm install github:sauravr09/sunmoon-css
 ```
 
 Import the CSS in your `main.jsx`:
